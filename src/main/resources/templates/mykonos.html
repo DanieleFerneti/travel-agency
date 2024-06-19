@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+    <title> ROMA3 PARTY </title>
+    <link href="/css/city.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png">
+</head>
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator"></header>
+
+
+<div id="Intro_wrapper" style="background-image: url('/images/mykonos.jpg');">
+    <div id="intro_background">
+        <div id="title-wrapper">
+            <div id="title">MYKONOS</div>
+        </div>
+
+        <div id="content">
+            <p>La vita notturna di Mykonos è la più famosa e storica di tutta la Grecia.</p>
+            <p> Ad oggi la vita notturna di Mykonos è composta da disco-pub, beach bar e discoteche immense all'interno del quale centinaia, se non migliaia, di persone si danno tutte insieme alla pazza gioia, scatenandosi tutta la notte!  </p>
+            <p>Divertirsi a Mykonos è veramente molto semplice. D'altrone qualsiasi pub, disco o bar ce l'avete lì dietro l'angolo. </p>
+        </div>
+
+
+
+        <div id="section_wrapper">
+            <div class="prop">
+                <div class="icon" id="icon1"></div>
+                <div class="desc">
+                    <h5>Inclusività</h5>
+                    <p>Lasciati andare fra le spiagge di mykonos</p>
+                </div>
+            </div>
+
+
+            <div class="prop">
+                <div class="icon" id="icon2"></div>
+                <div class="desc">
+                    <h5>Family </h5>
+                    <p>Prenota a mykonos e perditi tra le braccia della big family, tra le spiagge di mykonos< e tutti i party</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon3"></div>
+                <div class="desc">
+                    <h5>Libertà </h5>
+                    <p>Se cerchi il riposo, di certo non è la meta giusta, perchè qui si respira aria di party dalla mattina alla sera</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon4"></div>
+                <div class="desc">
+                    <h5>Party in Roma3 </h5>
+                    <p>Tutti i migliori locali già prenotati, sono previste le migliori serate che si possano desiderare a mykonos</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon5"></div>
+                <div class="desc">
+                    <h5>Esperienza </h5>
+                    <p>9 anni di esperienza a mykonos ci hanno fatto capire l’importanza dei dettagli. 4000 ragazzi sono partiti con noi, ci sarà un motivo no?</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon6">
+                </div>
+                <div class="desc">
+                    <h5>Organizzazione </h5>
+                    <p>Tu fai la valigia, al resto pensiamo noi. Zero pensieri su trasporto, alloggio, cosa visitare e dove andare. Abbiamo pianificato tutto!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>

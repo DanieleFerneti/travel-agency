@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Group Management</title>
+    <link rel="stylesheet" href="/css/management.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+<body>
+<header>
+    <h1>ALL ROMA3PARTY GROUPS</h1>
+</header>
+
+
+
+<table>
+    <tr>
+        <th>Group ID</th>
+        <th>Group Leader</th>
+        <th>Members</th>
+        <th id="op1">Operations</th>
+    </tr>
+    <tr>
+        <td th:text="${group.id}">Group ID</td>
+        <td th:text="${user.name} + ' ' + ${user.surname}">Group Leader</td>
+        <td>
+            <ul>
+                <li th:each="userG : ${group.users}">
+                    <span th:text="${userG.name} + ' ' + ${userG.surname}">Member</span>
+                </li>
+            </ul>
+        </td>
+        <td>
+            <a th:href="@{'/leader/user/'+${user.id} +'/group_details'}">
+                <button class="butt" id="details">Details </button>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<div id="back_wrapper">
+    <a th:href="@{/success}">
+        <button class="butt" id="back">Back</button>
+    </a>
+</div>
+
+</body>
+</html>

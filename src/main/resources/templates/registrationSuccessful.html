@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ROMA3 PARTY - Registrazione conclusa</title>
+	<link rel="stylesheet" href="/css/registrationSuccessful.css" />
+</head>
+
+<body>
+
+<div id="register_wrapper">
+	<div id="img_wrapper"> </div>
+	<div id="form_wrapper">
+		<h1>Benvenuto !</h1>
+
+
+		<div class = "input_form">
+			<label>Nome: </label>
+			<span th:text="${user.name}"></span>
+		</div>
+		<div class = "input_form">
+			<label>Cognome: </label>
+			<span th:text="${user.surname}"></span>
+		</div>
+		<div class = "input_form">
+			<label>Email: </label>
+			<span th:text="${user.email}"></span>
+		</div>
+		<div id="back_wrapper">
+			<a th:href="@{/}">
+				<button class="butt" id="back">Back </button>
+			</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

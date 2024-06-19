@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+	<title> ROMA3 PARTY </title>
+	<link href="/css/index.css" rel="stylesheet"/>
+	<link rel="icon" type="image/png" >
+</head>
+
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator">
+</header>
+
+<div id="Intro_wrapper">
+	<div id="intro_background">
+		<div id="title-wrapper">
+			<div id="title">#WeAreABigFamily</div>
+		</div>
+
+		<div id="content">
+			<ul>
+				<li id="s">
+					<span>S</span>UMMER
+					<div class="highlight"></div>
+				</li>
+				<li id="i">
+					<span>I</span>MAGINE
+					<div class="highlight"></div>
+				</li>
+				<li id="w">
+					<span>W</span>EEK
+					<div class="highlight"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="main_content">
+	<h2>#WeAreABigFamily means ...</h2>
+	<div id="content1">
+		<p> Per indole siamo cresciuti con un’ideologia inclusiva. Non abbiamo vincoli né barriere, non abbiamo stereotipi, non siamo “solo per pochi”.
+		</p>
+
+		<p>
+			Siamo creatori consapevoli di aggregazione di persone dalle sfumature diverse, dai gusti più disparati, con l’obiettivo di far conoscere la bellezza delle relazioni umane interpersonali che si vengono a creare durante i nostri viaggi tra persone totalmente diverse.
+		</p>
+
+		<p>
+			<strong>FAMILY</strong> per la solidità dei legami che si creano
+		</p>
+
+		<p>
+			<strong>BIG</strong> perché ciascuno può esserne parte.
+		</p>
+	</div>
+
+
+</div>
+
+
+	<div id="content2"></div>
+
+
+</div>
+
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>

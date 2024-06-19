@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Management</title>
+    <link rel="stylesheet" href="/css/management.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+<body>
+<header>
+    <h1>ALL USERS EXCEPT ROMA3PARTY</h1>
+</header>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Email</th>
+        <th>Group Name</th>
+        <th id="op1">Operations</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}">Name</td>
+        <td th:text="${user.surname}">Surname</td>
+        <td th:text="${user.email}">Email</td>
+        <td th:text="${user.groupName}">Group Name</td>
+        <td>
+
+            <div class="tooltip">
+                <a th:if="${usr?.id}==${user.id}" th:href="@{'/admin/user_management/delete_user/'+${user.id}}">
+                    <button class="butt delete_tooltip" id="delete">Delete</button>
+                </a>
+                <span class="tooltiptext">The user <span id="name" th:text="${user.name}">/</span> cannot be deleted because he has bookings</span>
+            </div>
+            <a th:unless="${usr?.id}==${user.id}" th:href="@{'/admin/user_management/delete_user/'+${user.id}}"
+               th:data-confirm-delete="|Are you sure you want to delete the user ${user.name} ${user.surname}?|"
+               onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+                <button class="butt" id="delete">Delete</button>
+            </a>
+            <a th:href="@{/admin/user_management/details_user/{id}(id=${user.id})}">
+                <button class="butt" id="details">Details</button>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<div id="back_wrapper">
+    <a th:href="@{/success}">
+        <button class="butt" id="back">Back</button>
+    </a>
+</div>
+</body>
+</html>

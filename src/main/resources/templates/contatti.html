@@ -1,0 +1,149 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+    <title>ROMA3 PARTY </title>
+    <link href="/css/contatti.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png">
+</head>
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator">
+</header>
+
+<div id="mappa">
+    <iframe style="border:0;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="100%" height="400"
+            src="https://maps.google.com/maps?q=Via%20Vito%20Volterra%2062&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+
+<div id="contatti_wrapper">
+    <div id="contatti">
+        <h1>CONTATTI</h1>
+        <div id="details_wrapper">
+
+            <div class="info">
+                <div class="social">
+                    <div>
+                        <img class="icon" src="/images/tel.png">
+                    </div>
+                    <div id="num">
+                        +393405606689
+                    </div>
+                </div>
+                <div class="social">
+                    <div>
+                        <img class="icon" src="/images/email.png">
+                    </div>
+                    <div id="email">
+                        daniele.ferneti@gmail.com
+                    </div>
+                </div>
+            </div>
+
+            <div id="separator">
+                <div class="sep"></div>
+                <div id="tratto">
+                    -
+                </div>
+                <div class="sep"></div>
+            </div>
+
+            <div class="info">
+                <div class="social">
+                    <div>
+                        <img class="icon" src="/images/instagram.png">
+                    </div>
+                    <div id="instagram">
+                        @roma3_party
+                    </div>
+                </div>
+                <div class="social">
+                    <div>
+                        <img class="icon" src="/images/facebook.png">
+                    </div>
+                    <div id="facebook">
+                        Roma3Party
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tabella_orari">
+        <div>
+            <h1>I NOSTRI ORARI</h1>
+            <br>LUNEDI <span>I nostri uffici sono chiusi al pubblico, ma il servizio è sempre attivo tramite la nostra chat telegram.</span>
+        </div>
+
+        <div id="tabella">
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Lunedì
+                </div>
+                <div class="orario">
+                    Chiusi
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Martedì
+                </div>
+                <div class="orario">
+                    9:00 - 20:00
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Mercoledì
+                </div>
+                <div class="orario">
+                    9:00 - 20:00
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Giovedì
+                </div>
+                <div class="orario">
+                    9:00 - 20:00
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Venerdì
+                </div>
+                <div class="orario">
+                    9:00 - 20:00
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Sabato
+                </div>
+                <div class="orario">
+                    9:00 - 20:00
+                </div>
+            </div>
+
+            <div class="giorno">
+                <div class="giorno_sett">
+                    Domenica
+                </div>
+                <div class="orario">
+                    9:00 - 14:00
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>

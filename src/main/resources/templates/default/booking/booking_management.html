@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Management</title>
+    <link rel="stylesheet" href="/css/management.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+<body>
+<header>
+    <h1>ALL BOOKINGS</h1>
+</header>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Group</th>
+        <th>Week</th>
+        <th>Price</th>
+        <th>Location</th>
+        <th>Hotel</th>
+        <th>Transport</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="booking: ${bookings}">
+        <td th:text="${booking.id}">ID</td>
+        <td th:text="${booking.group.name}">Group</td>
+        <td th:text="${booking.week.dateFrom} + ' - ' + ${booking.week.dateTo}">Week</td>
+        <td th:text="${booking.week.price}">Price</td>
+        <td th:text="${booking.week.location}">location</td>
+        <td th:text="${booking.week.hotel}">hotel</td>
+        <td th:text="${booking.week.transport}">transport</td>
+    </tr>
+    </tbody>
+</table>
+
+<div id="back_wrapper">
+    <a th:href="@{/success}">
+        <button class="butt" id="back">Back</button>
+    </a>
+</div>
+</body>
+</html>

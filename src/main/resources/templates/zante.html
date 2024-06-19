@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+    <title> ROMA3 PARTY </title>
+    <link href="/css/city.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" >
+</head>
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator"></header>
+
+
+<div id="Intro_wrapper" style="background-image: url('/images/zante.jpg');">
+    <div id="intro_background">
+        <div id="title-wrapper">
+            <div id="title"> ZANTE</div>
+        </div>
+
+        <div id="content">
+            <p>Discoteche con dj set di livello internazionale, locali aperti fino all’alba, aperitivi in spiaggia al tramonto: abbiamo reso l’idea?</p>
+            <p> Situata nel mar Ionio, Zante è una delle isole greche più frequentate dai giovani turisti, europei e non. </p>
+            <p>P.S.: dormi tanto e bene nelle settimane che precederanno la tua partenza: a Zante la notte è una cosa seria, e la voglia di far festa non va mai a letto!</p>
+        </div>
+
+
+
+        <div id="section_wrapper">
+            <div class="prop">
+                <div class="icon" id="icon1"></div>
+                <div class="desc">
+                    <h5>Inclusività</h5>
+                    <p>Prenota subito per ZANTE e entra a far parte della nosta big family facendo amicizia con chi vuoi</p>
+                </div>
+            </div>
+
+
+            <div class="prop">
+                <div class="icon" id="icon2"></div>
+                <div class="desc">
+                    <h5>Family </h5>
+                    <p>Prenota subito per ZANTE e entra a far parte della nosta big family facendo amicizia con chi vuoi</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon3"></div>
+                <div class="desc">
+                    <h5>Libertà </h5>
+                    <p>Zante è il giusto posto per sfogarsi dopp un anno di studio, sfogati insieme al nostro team</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon4"></div>
+                <div class="desc">
+                    <h5>Party in Roma3 </h5>
+                    <p>Prenota per Zante, e potrai entrare nelle discoteche più belle e partecipare a tutti i parti organizzati da ROMA3PARTY</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon5"></div>
+                <div class="desc">
+                    <h5>Esperienza </h5>
+                    <p>2 anni di esperienza a zante ci hanno fatto capire l’importanza dei dettagli. Già 2000 ragazzi hanno scelta questa meta, ci sarà un motivo no?</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon6">
+                </div>
+                <div class="desc">
+                    <h5>Organizzazione </h5>
+                    <p>Tu fai la valigia, al resto pensiamo noi. Zero pensieri su trasporto, alloggio, cosa visitare e dove andare. Abbiamo pianificato tutto !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>

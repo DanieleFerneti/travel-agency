@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Week Management </title>
+        <link rel="stylesheet" href="/css/management.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+    </head>
+    
+	<body>
+		<header>
+			<h1>ALL ROMA3PARTY WEEKS</h1>
+		</header>
+
+		<div id="create_wrapper">
+			<a th:href="@{/admin/week_management/add_week}">
+				<button class="butt" id="create">Add week</button>
+			</a>
+		</div>
+
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>From</th>
+				<th>To</th>
+				<th>Transport</th>
+				<th>Location</th>
+				<th>Hotel</th>
+				<th>Plan</th>
+				<th>Price</th>
+				<th id="op1">Operazioni</th>
+			</tr>
+			<tr th:each="week: ${weeks}">
+				<td th:text="${week.id}">from</td>
+				<td th:text="${week.dateFrom}">from</td>
+				<td th:text="${week.dateTo}">to</td>
+				<td th:text="${week.transport}">transport</td>
+				<td th:text="${week.location}">location</td>
+				<td th:text="${week.hotel}">hotel</td>
+				<td th:text="${week.plan}">hotel</td>
+				<td th:text="${week.price}">price</td>
+
+				<td>
+					<a th:href="@{/admin/week_management/edit_week/{id}(id=${week.id})}">
+						<button type="submit" class="butt" id="update">Update</button>
+					</a>
+					<div class="tooltip">
+						<a th:if="${w?.id}==${week.id}" th:href="@{/admin/week_management/delete_week/{id}(id=${week.id})}">
+							<button class="butt delete_tooltip" id="delete">Delete </button>
+						</a>
+						<span class="tooltiptext">La settimana a <span id="name" th:text="${week.location}">/</span> con data di partenza il <span id="name" th:text="${week.dateFrom}">/</span>  non puo' essere eliminata perchè è presente in una prenotazione</span>
+					</div>
+
+					<a th:unless="${w?.id}==${week.id}" th:href="@{/admin/week_management/delete_week/{id}(id=${week.id})}"
+					   th:data-confirm-delete="|Sei sicuro di voler eliminare la settimana a ${week.location} con data di partenza il ${week.dateFrom}?|"
+					   onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false">
+						<button class="butt" id="delete">Delete </button>
+					</a>
+					<a th:href="@{/admin/week_management/week_details/{id}(id=${week.id})}">
+						<button class="butt" id="details">Details </button>
+					</a>
+				</td>
+			</tr>
+		</table>
+		
+		<div id="back_wrapper">
+			<a th:href="@{/success}">
+				<button class="butt" id="back">Back </button>
+			</a>
+		</div>
+	</body>
+</html>

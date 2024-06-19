@@ -1,0 +1,84 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+    <title> ROMA3 PARTY </title>
+    <link href="/css/city.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png">
+</head>
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator"></header>
+
+
+<div id="Intro_wrapper" style="background-image: url('/images/barcellona.jpg');">
+    <div id="intro_background">
+        <div id="title-wrapper">
+            <div id="title">BARCELLONA</div>
+        </div>
+
+        <div id="content">
+            <p>Barcellona è famosa per la movida e in molti la scelgono come meta di vacanza proprio per l’animata vita notturna, le discoteche, i tanti locali notturni, i grandi festival estivi di musica elettronica e di altri generi.</p>
+            <p> Anche per chi cerca qualche locale più tranquillo, a Barcellona troverà una vasta scelta di lounge bar e caffè, i più suggestivi sulle terrazze degli hotel.</p>
+            <p>A Barcellona insomma ci sono locali per tutti i gusti e per tutte le tasche, dove trascorrere piacevolmente la serata o tirar tardi fino all’alba.</p>
+        </div>
+
+
+
+        <div id="section_wrapper">
+            <div class="prop">
+                <div class="icon" id="icon1"></div>
+                <div class="desc">
+                    <h5>Inclusività</h5>
+                    <p>Barcellona e la Spagna, sono ormai l'immagine della libertà in persona. Sii te stesso e sfogati</p>
+                </div>
+            </div>
+
+
+            <div class="prop">
+                <div class="icon" id="icon2"></div>
+                <div class="desc">
+                    <h5>Family </h5>
+                    <p>Prenotando per Barcellona, avrai l'opportuità di entrare nella nostra,ormai big,family spagnola </p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon3"></div>
+                <div class="desc">
+                    <h5>Libertà </h5>
+                    <p>Barcellona, è la giusta metà se stai cercando una città da visitare di giorno e vivere di notte nel massimo relax dopo un anno così faticoso</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon4"></div>
+                <div class="desc">
+                    <h5>Party in Roma3 </h5>
+                    <p>Perché le nostre feste sono diverse. Non è solo il fatto di avere un programma incluso nella quota, ma avere incluso IL NOSTRO programma.</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon5"></div>
+                <div class="desc">
+                    <h5>Esperienza </h5>
+                    <p>8 anni di esperienza a Barcellona ci hanno fatto capire l’importanza dei dettagli. Già 2000 ragazzi sono partiti con noi per questa metà, ci sarà un motivo no?</p>
+                </div>
+            </div>
+
+            <div class="prop">
+                <div class="icon" id="icon6">
+                </div>
+                <div class="desc">
+                    <h5>Organizzazione </h5>
+                    <p>Tu fai la valigia, al resto ci pensiamo noi. Zero pensieri su trasporto, alloggio, cosa visitare e dove andare. Abbiamo pianificato tutto !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>

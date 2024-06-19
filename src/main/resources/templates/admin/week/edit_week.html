@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Modify week</title>
+    <link rel="stylesheet" href="/css/create_week.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+
+<body>
+
+<div id="wrapper">
+    <div id="img_wrapper"></div>
+    <div id="form_wrapper">
+        <h1>Modifica la ricetta</h1>
+        <div id="form" style="text-align: center; color: white;">
+            <form id="sectionForm" th:action="@{'/admin/week_management/' + ${week.id}}" method="POST" th:object="${week}" enctype="multipart/form-data">
+                <div id="error" th:if="${#fields.hasGlobalErrors()}">
+                    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}">errore globale</p>
+                </div>
+
+                <!-- Data di partenza -->
+                <span>From:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="data" type="date" placeholder="data" th:field="*{dateFrom}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('dateFrom')}" th:errors="*{dateFrom}" class="error">Data di partenza Error</div>
+                </div>
+
+                <!-- Data di arrivo-->
+                <span>To:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="data" type="date" placeholder="data" th:field="*{dateTo}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('dateTo')}" th:errors="*{dateTo}" class="error">Data di arrivo Error</div>
+                </div>
+
+                <span>Transport:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="transport" type="text" placeholder="transport" th:field="*{transport}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('transport')}" th:errors="*{transport}" class="error"></div>
+                </div>
+
+                <span>Location:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="location" type="text" placeholder="location" th:field="*{location}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('location')}" th:errors="*{location}" class="error"></div>
+                </div>
+
+                <span>Hotel:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="hotel" type="text" placeholder="hotel" th:field="*{hotel}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('hotel')}" th:errors="*{hotel}" class="error"></div>
+                </div>
+
+                <span>Plan:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="plan" type="text" placeholder="plan" th:field="*{plan}" required/>
+                    </span>
+                    <div th:if="${#fields.hasErrors('plan')}" th:errors="*{plan}" class="error"></div>
+                </div>
+
+                <span>Price:</span>
+                <div class="input_form">
+                    <span>
+                        <input name="price" type="number" placeholder="price" th:field="*{price}" required min="0"/>
+                     </span>
+                    <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></div>
+                </div>
+
+                <div id="submit_wrapper">
+                    <span>
+                        <button class="butt" id="submit" type="submit">CONFERMA</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="back_wrapper">
+    <a th:href="@{/admin/week_management}">
+        <button class="butt" id="back">Back</button>
+    </a>
+    <a th:href="@{/success}">
+        <button class="butt" id="home">Home</button>
+    </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>LEADER SUITE ROMA3 PARTY</title>
+    <link rel="stylesheet" href="/css/administration.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+
+<body>
+<h1>Benvenuto!</h1>
+<h3>In questa pagina potrai prenotare per una o più settimane, vedere le tue prenotazioni e tutti i dettagli del tuo gruppo, per qualsiasi problema non esitare a contattarci</h3>
+<div>
+    <div id="button_wrapper">
+
+        <a th:href="@{'/leader/user/' + ${user_id} + '/booking_management'}">
+            <button class="butt" id="recipe">booking management</button>
+        </a>
+
+        <a th:href="@{'/leader/user/' + ${user_id} + '/group_management'}">
+            <button class="butt" id="recipe">group management</button>
+        </a>
+
+    </div>
+</div>
+<br>
+
+<div>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>

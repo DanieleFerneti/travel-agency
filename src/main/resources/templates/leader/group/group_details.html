@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dettagli gruppo</title>
+  <link rel="stylesheet" href="/css/details.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+</head>
+
+<body>
+<header>
+  <h1>Dettagli gruppo</h1>
+</header>
+
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Email</th>
+  </tr>
+
+  <tr th:each="user : ${groupUsers}">
+    <td th:text="${user.name}">Name</td>
+    <td th:text="${user.surname}">Surname</td>
+    <td th:text="${user.email}">Email</td>
+  </tr>
+
+</table>
+
+<div id="back_wrapper">
+  <a th:href="@{'/leader/user/'+${user.id}+'/booking_management'}">
+    <button class="butt" id="back">Back</button>
+  </a>
+  <a th:href="@{/success}">
+    <button class="butt" id="home">Home</button>
+  </a>
+</div>
+</body>
+</html>

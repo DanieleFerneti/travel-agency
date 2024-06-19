@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles(title, links)">
+	<title th:replace="${title}">Titolo</title>
+	<meta charset="UTF-8" />
+	<link th:href="@{/css/base.css}" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+	<!-- placeholder for additional links -->
+	<th:block th:replace="${links}" />
+</head>
+
+<body>
+
+<header th:fragment = "navigator">
+	<nav>
+		<div class="link">
+			<a class="dropbtn" th:href="@{/}" id="home">HOME</a>
+		</div>
+
+		<div class="link">
+			<a class="dropbtn" th:href="@{/chi-siamo}">CHI SIAMO</a>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropbtn"> WEEK </button>
+			<div class="dropdown-content">
+				<a th:each="week : ${weeks}" th:href="@{'/week' + '/' + ${week.id}}" th:text="${week.location}">Ibiza</a>
+			</div>
+		</div>
+
+		<div class="link">
+			<a class="dropbtn" th:href="@{/entra-nel-team}">ENTRA NEL TEAM</a>
+		</div>
+
+		<div>
+			<a class="dropbtn" th:href="@{/contatti}" style="text-decoration:none;color:black">CONTATTI</a>
+		</div>
+
+		<div class="link">
+			<a class="dropbtn" th:href="@{/register}">Registrati</a>
+		</div>
+
+		<div class="link">
+			<a class="dropbtn" th:href="@{/login}">Accedi</a>
+		</div>
+
+	</nav>
+</header>
+
+<footer id="Footer" th:fragment = "footer">
+
+	<div id="container">
+		<div class="foot">
+			<h2>Informazioni</h2>
+			<div class="informazioni">
+				<p>Siamo una delle migliori agenzie che organizzano viaggi universitari, unisciti a noi e non te ne pentirai
+				</p>
+			</div>
+		</div>
+
+		<div class="foot">
+			<h2>Contatti</h2>
+			<div class="informazioni">
+				<p>📞 +39 3405606689</p>
+				<p>📍 Via Vito Volterra 62, 00146 - Roma.</p>
+				<p>📨  daniele.ferneti@gmail.com</p>
+			</div>
+		</div>
+
+		<div class="foot">
+			<h2>Orari di apertura</h2>
+			<div class="informazioni">
+				<p>Puoi contattarci in qualsiasi momento tramite mail o telegram oppure chiamando nei giorni indicati in
+					<a th:href="@{/contatti}">questa pagina</a>.</p>
+			</div>
+		</div>
+
+		<div class="foot" id="admin">
+			<h2>Amministratore</h2>
+			<div class="informazioni">
+				<a th:href="@{/login}">Login amministratore</a>
+
+			</div>
+		</div>
+
+	</div>
+</footer>
+</body>
+</html>

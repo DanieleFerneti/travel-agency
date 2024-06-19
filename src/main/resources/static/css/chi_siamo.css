@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    background-image: url("/images/sfondo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@import
+url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap')
+;
+
+#Intro_wrapper {
+    background-image: url("/images/festaatema.jpg");
+    height: fit-content;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 40px;
+    margin-top: 6.5%;
+}
+
+.background-blur {
+    background-image: url("/images/festaatema.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+    filter: blur(5px); /* Sfoca solo l'immagine di sfondo */
+    z-index: 1;
+}
+
+#intro_background {
+    background-color: rgba(50, 50, 50, 0.3);
+}
+
+
+#title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#title {
+    padding-top: 6.3%;
+    padding-left: 6%;
+}
+
+#content {
+    padding: 4%;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+
+#section_wrapper {
+    padding-top: 5%;
+    display: flex;
+    flex-wrap: wrap; /* Permette agli elementi di andare su una nuova riga */
+    justify-content: space-around; /* Aggiungi questa riga se vuoi spaziatura uniforme */
+    margin: 0 10% 1% 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.prop {
+    width: 30%; /* Imposta la larghezza in modo che tre elementi si adattino per riga */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%; /* Spaziatura verticale tra le righe */
+}
+
+.desc {
+    width: 90%;
+    font-size: medium;
+    text-align: center;
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+
+.icon {
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    /* background-size: auto; */
+    background-position: center;
+    border: solid;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#icon1 {
+    background-image: url("/images/inclusivity.png");
+}
+
+#icon2 {
+    background-image: url("/images/family.png");
+}
+
+#icon3 {
+    background-image: url("/images/liberty.png");
+}
+
+#icon4 {
+    background-image: url("/images/diamond.png");
+}
+
+#icon5 {
+    background-image: url("/images/experience.png");
+}
+
+#icon6 {
+    background-image: url("/images/organization.png");
+}

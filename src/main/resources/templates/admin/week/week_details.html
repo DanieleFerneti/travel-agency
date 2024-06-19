@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> Dettagli week </title>
+        <link rel="stylesheet" href="/css/details.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/images/favicons/management_favicon.png">
+    </head>
+    
+	<body>
+		<header>
+			<h1>Dettagli ricetta</h1>
+		</header>
+
+		<table>
+			<tr>
+				<th>From</th>
+				<th>To</th>
+				<th>Location</th>
+				<th>Bookings</th>
+			</tr>
+			<tr>
+				<td th:text="${week.dateFrom}">dateFrom</td>
+				<td th:text="${week.dateTo}">dateTo</td>
+			 	<td th:text ="${week.location}">location</td>
+				<td>
+					<ul>
+			 			<li th:each="booking : ${week.bookings}">
+							<span class="ingredient-name" th:text="${booking.group.name}" style="display: inline-block; width: 150px;" ></span>
+							<span class="ingredient-quantity" th:text="${booking.group.users.size()}" style="text-align: right; margin-left: 0; padding-right: 0; display: inline-block; width: 50px;"></span>
+			 			</li>
+			 		</ul>
+				</td>
+			</tr>
+		</table>
+		
+		<div id="back_wrapper">
+			<a th:href="@{/admin/week_management}">
+				<button class="butt" id="back">Back </button>
+			</a>
+			 <a th:href="@{/success}">
+				<button class="butt" id="home">Home </button>
+			</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/base.html :: headerfiles(~{::title}, ~{::link})">
+    <title> ROMA3 PARTY </title>
+    <link href="/css/entra_nel_team.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png">
+</head>
+
+<body>
+
+<header th:replace="fragments/base.html :: navigator"></header>
+
+
+<div id="Intro_wrapper">
+    <div id="intro_background">
+        <div id="title-wrapper">
+            <div id="title"> ENTRA NEL NOSTRO TEAM</div>
+        </div>
+
+        <div id="content">
+            <ul>
+                <li id="s">
+                    <span>S</span>UMMER
+                    <div class="highlight"></div>
+                </li>
+                <li id="i">
+                    <span>I</span>MAGINE
+                    <div class="highlight"></div>
+                </li>
+                <li id="w">
+                    <span>W</span>EEK
+                    <div class="highlight"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="main_content">
+    <h2>CANDIDATURE CHIUSE</h2>
+    <div id="content1">
+        <p> Le candidature per l’anno 2024 sono chiuse.</p>
+        <p>Se sei interessato a candidarti per entrare nel nostro team dovrai aspettare la fine della prossima stagione estiva!</p>
+    </div>
+
+<div id="section_wrapper">
+    <div class="prop">
+        <div class="icon" id="icon1"></div>
+        <div class="desc">
+            <h5>1 COMPILA IL FORM</h5>
+            <p>Il primo passo per entrare nel nostro team è la compilazione del form (clicca il bottone sopra o sotto!). Mi raccomando! E’ la tua prima presentazione e il tuo primo approccio verso di noi! Spiegaci bene chi sei, quali sono le tue doti e perché vuoi entrare nella nostra family. Una volta inviata, la candidatura verrà analizzata e, nel caso in cui risulterà adatta alle nostre esigenze, verrai contattato per i successivi step</p>
+        </div>
+    </div>
+
+    <div class="prop">
+        <div class="icon" id="icon2"></div>
+        <div class="desc">
+            <h5>2 VIDEOCALL </h5>
+            <p> Prima di poter partecipare allo stage, faremo una videocall per avere un primo contatto con te! Dopodiché faremo delle prove per capire il tuo livello a secondo del ruolo per il quale ti sei candidato.</p>
+        </div>
+    </div>
+
+    <div class="prop">
+        <div class="icon" id="icon3"></div>
+        <div class="desc">
+            <h5>3 PARTECIPA ALLO STAGE </h5>
+            <p>Ovviamente abbiamo bisogno di approfondire la tua conoscenza prima di poter farti partire! Per questo motivo, successivamente alla videocall, organizzeremo lo stage di selezione, dove ci vedremo dal vivo e potrete farvi conoscere per quello che realmente siete!</p>
+        </div>
+    </div>
+
+    <div class="prop">
+        <div class="icon" id="icon4"></div>
+        <div class="desc">
+            <h5>4 ENTRA NEL TEAM</h5>
+            <p>Se lo stage andrà bene e risulterai la persona giusta…. bene..</p>
+            <p>BENVENUTO NELLA FAMILY!</p>
+            <p>Ma dove e quando partirò???</p>
+            <p>A seconda della tua disponibilità e delle nostre esigenze sceglieremo la destinazione e il periodo adatto alle tue caratteristiche e ai nostri obiettivi.</p>
+        </div>
+    </div>
+
+
+
+</div>
+
+<footer th:replace="fragments/base.html :: footer"></footer>
+
+</body>
+</html>
