@@ -15,6 +15,7 @@ public class Booking {
     private Group group;
 
     @ManyToOne
+    @JoinColumn(name = "week_id")
     private Week week;
 
     public Long getId() {
@@ -44,8 +45,7 @@ public class Booking {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Booking booking = (Booking) o;
+        if (!(o instanceof Booking booking)) return false;
         return Objects.equals(id, booking.id) && Objects.equals(group, booking.group) && Objects.equals(week, booking.week);
     }
 

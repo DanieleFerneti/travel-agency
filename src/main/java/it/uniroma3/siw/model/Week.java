@@ -44,7 +44,7 @@ public class Week {
     @NotNull
     private Integer price;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy= "week",cascade = CascadeType.ALL)
     private Set<Booking> bookings;
 
     public Long getId() {
@@ -118,6 +118,7 @@ public class Week {
     public void setDateTo(LocalDate dateTo) {
         this.dateTo = dateTo;
     }
+
 
     @Override
     public boolean equals(Object o) {

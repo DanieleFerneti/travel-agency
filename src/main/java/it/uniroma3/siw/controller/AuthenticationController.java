@@ -79,7 +79,7 @@ public class AuthenticationController {
                 model.addAttribute("user_id", user_id);
                 return "leader_administration";
             }
-            if (credentials.getRole().equals(Credentials.LEADER_ROLE)) {
+            if (credentials.getRole().equals(Credentials.DEFAULT_ROLE)) {
                 Long user_id= credentials.getUser().getId();
                 model.addAttribute("user_id", user_id);
                 return "default_administration";
