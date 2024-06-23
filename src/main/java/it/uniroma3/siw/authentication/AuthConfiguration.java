@@ -73,12 +73,12 @@ public class AuthConfiguration {
                 .defaultSuccessUrl("/success", true)
                 .failureUrl("/login?error=true")
 
-/*                *//**oauth login **//*
+                //**oauth login **//*
                 .and().oauth2Login()
                 .loginPage("/login")
                 .permitAll()
-                .defaultSuccessUrl("/success/oauth",true)
-                .failureUrl("/login?error=true")*/
+                .defaultSuccessUrl("/success",true)
+                .failureUrl("/login?error=true")
 
 
                 // LOGOUT: qui definiamo il logout

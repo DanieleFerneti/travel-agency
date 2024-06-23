@@ -15,6 +15,7 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -139,25 +140,59 @@ public class AuthenticationController {
 
     @GetMapping("/success")
     public String defaultAfterLogin(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.isAuthenticated()) {
+            if (authentication.getPrincipal() instanceof UserDetails) {
+                UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+                Credentials credentials = credentialsService.findByUsername(userDetails.getUsername());
+                if (credentials != null) {
+                    if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+                        return "administration";
+                    } else if (credentials.getRole().equals(Credentials.LEADER_ROLE)) {
+                        model.addAttribute("user_id", credentials.getUser().getId());
+                        return "leader_administration";
+                    } else if (credentials.getRole().equals(Credentials.DEFAULT_ROLE)) {
+                        model.addAttribute("user_id", credentials.getUser().getId());
+                        return "default_administration";
+                    }
+                }
+            }
+            else{
+                OAuth2User userDetails = (OAuth2User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                System.out.println(userDetails.getAttributes().toString());
+                String email = userDetails.getAttribute("email");
+                User user = userService.findByEmail(email);
+                if(user == null) {
+                    user = new User();
+                    user.setName((String)userDetails.getAttribute("given_name"));
+                    user.setSurname((String)userDetails.getAttribute("family_name"));
+                    user.setEmail(email);
+                    userService.save(user);
 
-        UserDetails adminDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Credentials credentials = credentialsService.findByUsername(adminDetails.getUsername());
-        if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
-            return "administration";
-        }
-        if (credentials.getRole().equals(Credentials.LEADER_ROLE)){
-            Long user_id= credentials.getUser().getId();
-            model.addAttribute("user_id", user_id);
-            return "leader_administration";
-        }
+                    Credentials  credentials = new Credentials();
+                    credentials.setUsername(email);
+                    credentials.setUser(user);
+                    credentials.setRole(Credentials.DEFAULT_ROLE);
+                    credentialsService.save(credentials);
+                }
+                Credentials credentials = credentialsService.findById(user.getId());
+                Long userId = credentials.getUser().getId();
+                model.addAttribute("user_id", userId);
 
-        if (credentials.getRole().equals(Credentials.DEFAULT_ROLE)){
-            Long user_id= credentials.getUser().getId();
-            model.addAttribute("user_id", user_id);
-            return "default_administration";
+                // Gestisci il reindirizzamento basato sul ruolo
+                if (credentials.getRole().equals(Credentials.ADMIN_ROLE)) {
+                    return "administration";
+                } else if (credentials.getRole().equals(Credentials.LEADER_ROLE)) {
+                    return "leader_administration";
+                } else if (credentials.getRole().equals(Credentials.DEFAULT_ROLE)) {
+                    return "default_administration";
+                }
+                return "formLogin";
+            }
         }
         return "formLogin";
     }
+
 
 
 }

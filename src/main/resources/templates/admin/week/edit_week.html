@@ -25,7 +25,7 @@
                 <span>From:</span>
                 <div class="input_form">
                     <span>
-                        <input name="data" type="date" placeholder="data" th:field="*{dateFrom}" required/>
+                        <input name="dateFrom" type="date" placeholder="data" th:value="*{dateFrom}" th:default="*{dateFrom}" required/>
                     </span>
                     <div th:if="${#fields.hasErrors('dateFrom')}" th:errors="*{dateFrom}" class="error">Data di partenza Error</div>
                 </div>
@@ -34,7 +34,7 @@
                 <span>To:</span>
                 <div class="input_form">
                     <span>
-                        <input name="data" type="date" placeholder="data" th:field="*{dateTo}" required/>
+                        <input name="dateTo" type="date" placeholder="data" th:value ="*{dateTo}" th:default="*{dateTo}" required/>
                     </span>
                     <div th:if="${#fields.hasErrors('dateTo')}" th:errors="*{dateTo}" class="error">Data di arrivo Error</div>
                 </div>
