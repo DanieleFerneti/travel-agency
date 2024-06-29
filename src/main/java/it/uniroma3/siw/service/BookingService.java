@@ -17,11 +17,12 @@ import java.util.List;
 public class BookingService {
 
     @Autowired
-    BookingRepository bookingRepository;
+    private BookingRepository bookingRepository;
 
     @Transactional
     public List<Booking> getAllBookings() {
         List<Booking> bookings = new ArrayList<Booking>();
+
         for(Booking b : this.bookingRepository.findAll()) {
             bookings.add(b);
         }
